@@ -3,6 +3,8 @@
 // const root=ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);// render mehtod will create h1 tag
 
+import React from "react";
+import ReactDOM from "react-dom";
 
 const parent=React.createElement
 ("div",
