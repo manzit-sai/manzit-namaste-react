@@ -6,30 +6,83 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-//React.createElement => Object => HTML Element(render)
+/*
+ Header
+ - Logo
+ - Nav Items
+Body
+- Search
+- Restaurant Container
+    - Restaurant Card- Dish Name- Image- Restaurant Name- Rating- Cuisines- Time to Deliver
+ Footer
+ - Copyright
+ - Links
+ - Address
+ - Contact 
+*/
 
-//JSX=>React.createElement=>ReactElement-Js object => HTML Element (render)
-//JSX -HTML like or XML like syntax
-//React Element 
-const Title =()=>(
-<h1 className="head" tabIndex="2">Namaste React by JSX</h1>
-)
+const Header=()=>{
+    return(
+        <div className="header">
+            <div className="logo-container">
+                <img
+                 className="logo"
+                 src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+        
+                />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
 
-const number =10000;
-//Functional Component
-//Component name should be in pascal case
-const HeadingComponent=()=>(
-    <div>
-        <Title/>
-        {number}
-       <h1>Namaste React Functional Component</h1>
+            </div>
+
+        </div>
+    )
+}
+const RestarantCard=()=>{
+    return(
+        <div className="res-card" style={{backgroundColor:"#f0f0f0"}}>
+            <img className="res-logo" alt="res-logo" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLOy9JTZ7wPrUeaQm3TIyYKhMz1evbsMKtrIxjCB3-wtHLdBRf_phD2HAdA&s"/>
+            <h3>Meghana Foods</h3>
+            <h4>Asian , Biryani, North indian</h4>
+            <h4>4.4 Stars</h4>
+            <h4>38 minutes</h4>
+        </div>
+    )
+}
+const Body=()=>{
+    return(
+        <div className="body">
+            <div className="search">
+                Search
+            </div>
+            <div className="res-container">
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+                <RestarantCard/>
+
+            </div>
+
+        </div>
+    )
+}
+const AppLayout=()=>{
+    return <div className="app">
+       <Header/>
+       <Body/>
     </div>
-     
-)
-const HeadingComponent2=()=>(
-     <h1>Namaste React Functional Component</h1>
-)
+}
+
 const root=ReactDOM.createRoot(document.getElementById("root"))
-root.render(<HeadingComponent/>);
-
-
+root.render(<AppLayout/>);
